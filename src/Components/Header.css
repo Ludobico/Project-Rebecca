@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header_top_div {
+  height: 40vh;
+}
+
+a {
+  text-decoration: none;
+  color: #a0a0a0;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  position: absolute;
+  top: 1.25rem;
+  left: 60%;
+}
+.nav {
+  margin-top: 20px;
+}
+.nav_list {
+  display: flex;
+  gap: 4rem;
+}
+
+li {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+span {
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+span:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -1px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+span:hover:before {
+  width: 100%;
+}
+
+span:hover {
+  color: white;
+}
