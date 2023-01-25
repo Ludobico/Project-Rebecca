@@ -1,21 +1,65 @@
-import React, { Suspense, useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import "./Main.css";
 import Header from "../Header";
-import { OrbitControls, PerspectiveCamera, Gltf } from "@react-three/drei";
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  Gltf,
+  useHelper,
+} from "@react-three/drei";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+// const Port = () => {
+//   const { viewport } = useThree();
+//   const ref = useRef();
+//   useFrame(({ mouse }) => {
+//     let x = (mouse.x * viewport.width) / 2;
+//     let y = (mouse.y * viewport.height) / 2;
+//     // ref.current.position.set(x, y, 0);
+//     console.log(x, y);
+//   });
+//   // return <PerspectiveCamera makeDefault ref={ref} />;
+// };
+function Rig() {
+  const { camera, mouse } = useThree();
+  const vec = new THREE.Vector3();
+
+  return useFrame(() => {
+    // camera.position.lerp(vec.set(mouse.x, mouse.y, camera.position.z), 0.05);
+    camera.lookAt(-1, 3, 5);
+  });
+}
+function Lights() {
+  const light = useRef();
+  useHelper(light, THREE.SpotLightHelper, "red");
+  return (
+    <spotLight
+      ref={light}
+      intensity={10}
+      position={[5, 5, -10]}
+      shadow-mapSize-width={64}
+      shadow-mapSize-height={64}
+      castShadow
+      shadow-bias={-0.001}
+      rotation={[-Math.PI / 2, 0, 0]}
+    />
+  );
+}
+
 const Scene = () => {
   const gltf = useLoader(GLTFLoader, "/nightcity/scene.gltf");
-  //   useEffect(() => {
-  //     gltf.scene.traverse((obj) => {
-  //       if (obj.isMesh) {
-  //         obj.material.wireframe = true;
-  //         obj.material.color.set(0xff0000);
-  //       }
-  //     });
-  //   }, [gltf]);
+  useEffect(() => {
+    gltf.scene.traverse((obj) => {
+      if (obj.isMesh) {
+        // obj.material.wireframe = true;
+        // obj.material.color.set(0xff0000);
+      }
+    });
+  }, [gltf]);
+  console.log(gltf);
+
   const frameGltf = (gltf) => {
     gltf.scene.traverse((obj) => {
       if (obj.isMesh) {
@@ -26,11 +70,10 @@ const Scene = () => {
   };
   return (
     <>
-      <Suspense fallback={"null"}>
+      <Suspense fallback={null}>
         <div className="citymodel">
           <Canvas>
             <PerspectiveCamera makeDefault position={[5, 5, -11]} />
-            <directionalLight intensity={0.5} />
             {/* <Gltf src="/nightcity/scene.gltf" /> */}
             <primitive object={gltf.scene} />
             <OrbitControls
@@ -39,6 +82,9 @@ const Scene = () => {
               enableRotate={false}
               autoRotate
             />
+            {/* <Lights /> */}
+            {/* <Port /> */}
+            <Rig />
           </Canvas>
         </div>
         <div className="intro_city_top_div">
@@ -58,37 +104,3 @@ const Main = () => {
 };
 
 export default Main;
-
-// import { useFrame, useRef } from "react-three-fiber";
-// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-
-// function WireframeModel() {
-//   const meshRef = useRef();
-//   useEffect(() => {
-//     new GLTFLoader().load("/model.gltf", (gltf) => {
-//       meshRef.current = gltf.scene;
-//     });
-//   }, []);
-
-//   useFrame((state, delta, interaction) => {
-//     if (interaction.raycaster) {
-//       const raycaster = interaction.raycaster;
-//       const object = meshRef.current;
-//       raycaster.setFromCamera(interaction.mouse, state.camera);
-//       if (raycaster.intersectObject(object).length > 0) {
-//         object.traverse((child) => {
-//           if (child.isMesh) {
-//             child.material.wireframe = true;
-//           }
-//         });
-//       } else {
-//         object.traverse((child) => {
-//           if (child.isMesh) {
-//             child.material.wireframe = false;
-//           }
-//         });
-//       }
-//     }
-//   });
-//   return <primitive ref={meshRef} />;
-// }
