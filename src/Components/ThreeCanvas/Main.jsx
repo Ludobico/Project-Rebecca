@@ -58,3 +58,37 @@ const Main = () => {
 };
 
 export default Main;
+
+// import { useFrame, useRef } from "react-three-fiber";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+
+// function WireframeModel() {
+//   const meshRef = useRef();
+//   useEffect(() => {
+//     new GLTFLoader().load("/model.gltf", (gltf) => {
+//       meshRef.current = gltf.scene;
+//     });
+//   }, []);
+
+//   useFrame((state, delta, interaction) => {
+//     if (interaction.raycaster) {
+//       const raycaster = interaction.raycaster;
+//       const object = meshRef.current;
+//       raycaster.setFromCamera(interaction.mouse, state.camera);
+//       if (raycaster.intersectObject(object).length > 0) {
+//         object.traverse((child) => {
+//           if (child.isMesh) {
+//             child.material.wireframe = true;
+//           }
+//         });
+//       } else {
+//         object.traverse((child) => {
+//           if (child.isMesh) {
+//             child.material.wireframe = false;
+//           }
+//         });
+//       }
+//     }
+//   });
+//   return <primitive ref={meshRef} />;
+// }
