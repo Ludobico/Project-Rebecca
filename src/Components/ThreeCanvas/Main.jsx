@@ -1,19 +1,29 @@
-import React, { Suspense, useRef } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import React, { Suspense, useEffect, useRef } from "react";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import "./Main.css";
 import Header from "../Header";
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  useGLTF,
-  Gltf,
-} from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Gltf } from "@react-three/drei";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const Scene = () => {
   const gltf = useLoader(GLTFLoader, "/nightcity/scene.gltf");
-  console.log(gltf);
+  //   useEffect(() => {
+  //     gltf.scene.traverse((obj) => {
+  //       if (obj.isMesh) {
+  //         obj.material.wireframe = true;
+  //         obj.material.color.set(0xff0000);
+  //       }
+  //     });
+  //   }, [gltf]);
+  const frameGltf = (gltf) => {
+    gltf.scene.traverse((obj) => {
+      if (obj.isMesh) {
+        obj.material.wireframe = true;
+        obj.material.color.set(0xff0000);
+      }
+    });
+  };
   return (
     <>
       <Suspense fallback={"null"}>
