@@ -1,8 +1,28 @@
-Canvas {
-  background-color: black;
+.citymodel {
+  /* background-color: black; */
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
 }
 div {
   color: white;
+}
+
+@font-face {
+  font-family: "cyber";
+  src: url("../../Static/Fonts/Cyberpunk/Cyberpunk-Regular.ttf");
+}
+
+.intro_city_top_div {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.main_intro {
+  text-transform: uppercase;
+  font-family: "cyber";
+  background-color: transparent;
+  font-size: 6rem;
+  color: rgba(255, 255, 255, 80%);
 }

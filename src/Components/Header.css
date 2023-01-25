@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8,7 +6,7 @@
 }
 
 .header_top_div {
-  height: 20vh;
+  height: 10vh;
 }
 
 a {
