@@ -1,30 +1,34 @@
 import React from "react";
 import "./Header.css";
+import logo from "./Static/logo.png";
 
 const Header = () => {
   return (
     <div className="header_top_div">
+      <div className="div_img">
+        <img src={logo} className="logo_img" />
+      </div>
       <header>
-        <div class="nav">
-          <ul class="nav_list">
+        <div className="nav">
+          <ul className="nav_list">
             <li>
               <a href="#">
-                <span>Home</span>
+                <span>Top</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span>About me</span>
+                <span>Github</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span>3D Background</span>
+                <span>ThreeJS</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span>Projects</span>
+                <span>Project</span>
               </a>
             </li>
             <li>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	LA Night City
+* source:	https://sketchfab.com/3d-models/la-night-city-a85450184c6e4ddf87b49c402641e5b4
+* author:	FUD-UJEP (https://sketchfab.com/FUD-UJEP)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "LA Night City" (https://sketchfab.com/3d-models/la-night-city-a85450184c6e4ddf87b49c402641e5b4) by FUD-UJEP (https://sketchfab.com/FUD-UJEP) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -4,10 +4,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: black;
 }
 
 .header_top_div {
-  height: 40vh;
+  height: 20vh;
 }
 
 a {
@@ -59,4 +60,13 @@ span:hover:before {
 
 span:hover {
   color: white;
+}
+.div_img {
+  display: flex;
+  padding-top: 0.625rem;
+  padding-left: 1.5625rem;
+}
+.logo_img {
+  width: 12.5rem;
+  height: 6.25rem;
 }
