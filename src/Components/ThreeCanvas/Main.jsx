@@ -56,11 +56,11 @@ const Scene = () => {
       <Suspense fallback={null}>
         <div className="citymodel">
           <Canvas>
-            <PerspectiveCamera makeDefault position={[5, 5, -11]} />
+            <PerspectiveCamera makeDefault position={[5, 5, -12]} />
             {/* <Gltf src="/nightcity/scene.gltf" /> */}
             <GltfModel />
             <OrbitControls
-              enableZoom={false}
+              // enableZoom={false}
               enablePan={false}
               enableRotate={false}
               autoRotate
