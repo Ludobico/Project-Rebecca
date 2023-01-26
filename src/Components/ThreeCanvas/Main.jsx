@@ -9,6 +9,9 @@ import {
   useHelper,
   ScrollControls,
   Scroll,
+  Loader,
+  useProgress,
+  Html,
 } from "@react-three/drei";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -17,65 +20,37 @@ import Fade from "react-reveal/Fade";
 import Btext from "../Btext";
 import NoiseProp1 from "./NoiseProp1";
 import NoiseProp2 from "./NoiseProp2";
+import NoiseProp3 from "./NoiseProp3";
+import { Perf } from "r3f-perf";
+import LoaderPro from "./LoaderPro";
 
-// const Port = () => {
-//   const { viewport } = useThree();
-//   const ref = useRef();
-//   useFrame(({ mouse }) => {
-//     let x = (mouse.x * viewport.width) / 2;
-//     let y = (mouse.y * viewport.height) / 2;
-//     // ref.current.position.set(x, y, 0);
-//     console.log(x, y);
-//   });
-//   // return <PerspectiveCamera makeDefault ref={ref} />;
-// };
 function Rig() {
   const { camera, mouse } = useThree();
-  const vec = new THREE.Vector3();
 
   return useFrame(() => {
     camera.lookAt(-1, 3, 5);
   });
 }
-function Lights() {
-  const light = useRef();
-  useHelper(light, THREE.SpotLightHelper, "red");
-  return (
-    <spotLight
-      ref={light}
-      intensity={10}
-      position={[5, 5, -10]}
-      shadow-mapSize-width={64}
-      shadow-mapSize-height={64}
-      castShadow
-      shadow-bias={-0.001}
-      rotation={[-Math.PI / 2, 0, 0]}
-    />
-  );
-}
-
 const Scene = () => {
   return (
     <>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
         <div className="citymodel">
           <Canvas>
-            <ScrollControls pages={1.5} damping={0.85} distance={0.5}>
-              <Scroll>
-                <PerspectiveCamera makeDefault position={[5, 5, -12]} />
-                {/* <Gltf src="/nightcity/scene.gltf" /> */}
-                <GltfModel />
-                <OrbitControls
-                  enableZoom={false}
-                  enablePan={false}
-                  enableRotate={false}
-                  autoRotate
-                />
-                {/* <Lights /> */}
-                {/* <Port /> */}
-                <Rig />
-              </Scroll>
-            </ScrollControls>
+            {/* <ScrollControls pages={1.5} damping={0.85} distance={0.5}> */}
+            {/* <Scroll> */}
+            <PerspectiveCamera makeDefault position={[5, 5, -12]} />
+            <GltfModel />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              enableRotate={false}
+              autoRotate
+            />
+            <Rig />
+            {/* </Scroll> */}
+            {/* </ScrollControls> */}
+            <Perf />
           </Canvas>
         </div>
         <div className="intro_city_top_div">
@@ -94,6 +69,11 @@ const Scene = () => {
         <div className="lucy">
           <Canvas>
             <NoiseProp2 />
+          </Canvas>
+        </div>
+        <div className="rebecca">
+          <Canvas>
+            <NoiseProp3 />
           </Canvas>
         </div>
       </Suspense>

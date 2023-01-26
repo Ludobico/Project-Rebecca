@@ -5,6 +5,7 @@ import {
   Bloom,
   Glitch,
   Vignette,
+  SMAA,
 } from "@react-three/postprocessing";
 import React from "react";
 import {
@@ -23,7 +24,7 @@ const NoiseProp2Effect = () => {
       <Bloom
         luminanceThreshold={0}
         luminanceSmoothing={0.9}
-        intensity={2}
+        intensity={0.3}
         radius={2}
       />
     </EffectComposer>

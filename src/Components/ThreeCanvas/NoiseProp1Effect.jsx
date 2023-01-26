@@ -5,6 +5,7 @@ import {
   Bloom,
   Glitch,
   Vignette,
+  SMAA,
 } from "@react-three/postprocessing";
 import React from "react";
 import {

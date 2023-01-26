@@ -1,6 +1,6 @@
 import { Image, Text } from "@react-three/drei";
 import React, { Suspense } from "react";
-import mugshot from "../../Static/Img/example.jpg";
+import mugshot from "../../Static/Img/lucy.jpg";
 import "./NoiseProp.css";
 import NoiseProp2Effect from "./NoiseProp2Effect";
 
@@ -8,11 +8,11 @@ const NoiseProp2 = () => {
   const characters = [
     {
       mugshot: mugshot,
-      occupation: "Solo",
-      name: "David Martinez",
-      state: "Dead",
-      age: "18",
-      bio: `I’LL TAKE YOU TO THE MOON!\nI PROMISE!`,
+      occupation: "Netrunner",
+      name: "Lucy",
+      state: "Unknown",
+      age: "20",
+      bio: `Don’t make a name for yourself as a cyberpunk by how you live… Make a name by how you die.`,
     },
   ];
   return (

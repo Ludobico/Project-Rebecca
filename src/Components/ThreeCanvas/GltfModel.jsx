@@ -6,8 +6,9 @@ import {
 } from "@react-three/postprocessing";
 import { useControls } from "leva";
 import { BlendFunction } from "postprocessing";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { GLTFLoader } from "three-stdlib";
+import LoaderPro from "./LoaderPro";
 
 const GltfModel = () => {
   const gltf = useLoader(GLTFLoader, "/nightcity/scene.gltf");
@@ -16,7 +17,6 @@ const GltfModel = () => {
   // gltf.materials.Dtla_Orbit_u2_v1.wireframe = true;
   // gltf.materials.Dtla_Orbit_u2_v2.wireframe = true;
   // gltf.materials.Dtla_Orbit_u3_v1.wireframe = true;
-  console.log(gltf);
 
   return (
     <>

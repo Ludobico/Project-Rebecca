@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lowpoly City Free
+* source:	https://sketchfab.com/3d-models/lowpoly-city-free-974655237cfd41ad929b7525f8372d52
+* author:	cyberpunk#3057 (https://sketchfab.com/bhaveshushetty2000)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lowpoly City Free" (https://sketchfab.com/3d-models/lowpoly-city-free-974655237cfd41ad929b7525f8372d52) by cyberpunk#3057 (https://sketchfab.com/bhaveshushetty2000) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

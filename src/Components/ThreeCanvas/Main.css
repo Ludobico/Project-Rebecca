@@ -36,6 +36,11 @@ div {
   height: 100vh;
 }
 
+.rebecca {
+  width: 100vw;
+  height: 100vh;
+}
+
 ::-webkit-scrollbar {
   display: none;
   scrollbar-width: none;
