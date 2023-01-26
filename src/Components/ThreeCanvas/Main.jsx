@@ -7,12 +7,15 @@ import {
   PerspectiveCamera,
   Gltf,
   useHelper,
+  ScrollControls,
+  Scroll,
 } from "@react-three/drei";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import GltfModel from "./GltfModel";
 import Fade from "react-reveal/Fade";
 import Btext from "../Btext";
+import NoiseProp1 from "./NoiseProp1";
 
 // const Port = () => {
 //   const { viewport } = useThree();
@@ -56,18 +59,27 @@ const Scene = () => {
       <Suspense fallback={null}>
         <div className="citymodel">
           <Canvas>
-            <PerspectiveCamera makeDefault position={[5, 5, -12]} />
-            {/* <Gltf src="/nightcity/scene.gltf" /> */}
-            <GltfModel />
-            <OrbitControls
-              // enableZoom={false}
-              enablePan={false}
-              enableRotate={false}
-              autoRotate
-            />
-            {/* <Lights /> */}
-            {/* <Port /> */}
-            <Rig />
+            <ScrollControls
+              pages={1.5}
+              damping={0.85}
+              distance={0.5}
+              style={{ display: "none" }}
+            >
+              <Scroll>
+                <PerspectiveCamera makeDefault position={[5, 5, -12]} />
+                {/* <Gltf src="/nightcity/scene.gltf" /> */}
+                <GltfModel />
+                <OrbitControls
+                  enableZoom={false}
+                  enablePan={false}
+                  enableRotate={false}
+                  autoRotate
+                />
+                {/* <Lights /> */}
+                {/* <Port /> */}
+                <Rig />
+              </Scroll>
+            </ScrollControls>
           </Canvas>
         </div>
         <div className="intro_city_top_div">
@@ -77,6 +89,11 @@ const Scene = () => {
           <div className="intro_city_bottom_div">
             <Btext />
           </div>
+        </div>
+        <div className="david">
+          <Canvas>
+            <NoiseProp1 />
+          </Canvas>
         </div>
       </Suspense>
     </>

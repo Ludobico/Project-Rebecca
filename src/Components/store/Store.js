@@ -1,7 +1,8 @@
 import create from "zustand";
 
-const useStore = create(() => ({
+const ZustandStore = create(() => ({
   ProfilePosition: -7,
+  NightCityBrightNessVar: -1.0,
 }));
 
-export default useStore;
+export default ZustandStore;

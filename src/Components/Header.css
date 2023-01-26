@@ -7,6 +7,7 @@ body {
 
 .header_top_div {
   height: 10vh;
+  overflow: hidden;
 }
 
 a {

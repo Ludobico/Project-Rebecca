@@ -1,5 +1,4 @@
 .citymodel {
-  /* background-color: black; */
   width: 100vw;
   height: 90vh;
 }
@@ -25,4 +24,9 @@ div {
   background-color: transparent;
   font-size: 6rem;
   color: rgba(255, 255, 255, 80%);
+}
+
+.david {
+  width: 100vw;
+  height: 100vh;
 }
