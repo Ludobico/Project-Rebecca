@@ -1,8 +1,17 @@
 import React from "react";
 import "./Header.css";
 import logo from "../Static/Img/logo.png";
+import { useNavigate } from "react-router";
 
 const Header = () => {
+  const navigator = useNavigate();
+
+  const toTop = () => {
+    navigator("/");
+  };
+  const toContact = () => {
+    navigator("/contact");
+  };
   return (
     <div className="header_top_div">
       <div className="div_img">
@@ -13,7 +22,7 @@ const Header = () => {
           <ul className="nav_list">
             <li>
               <a href="#">
-                <span>Top</span>
+                <span onClick={toTop}>Top</span>
               </a>
             </li>
             <li>
@@ -33,7 +42,7 @@ const Header = () => {
             </li>
             <li>
               <a href="#">
-                <span>Contact</span>
+                <span onClick={toContact}>Contact</span>
               </a>
             </li>
           </ul>

@@ -1,5 +1,20 @@
 .cops_model {
   width: 100vw;
   height: 90vh;
-  background-color: white;
+  background-color: black;
+}
+
+.contact_info {
+  position: absolute;
+  top: 25%;
+  left: 55%;
+}
+
+.contact_top {
+  font-size: 4rem;
+}
+
+.contact_bottom {
+  padding-top: 15px;
+  font-size: 26px;
 }
