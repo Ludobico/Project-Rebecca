@@ -1,10 +1,10 @@
 import { Image, Text } from "@react-three/drei";
 import React, { Suspense } from "react";
-import mugshot from "../../Static/Img/david.png";
+import mugshot from "../../Static/Img/example.jpg";
 import "./NoiseProp.css";
-import NoiseProp1Effect from "./NoiseProp1Effect";
+import NoiseProp2Effect from "./NoiseProp2Effect";
 
-const NoiseProp1 = () => {
+const NoiseProp2 = () => {
   const characters = [
     {
       mugshot: mugshot,
@@ -19,15 +19,6 @@ const NoiseProp1 = () => {
     <>
       <directionalLight intensity={0.5} />
       <Suspense fallback={null}>
-        <Text
-          position={[0, 3, 0]}
-          anchorX="center"
-          anchorY="middle"
-          textAlign="center"
-          fontSize={0.4}
-        >
-          Profile
-        </Text>
         <Image
           url={characters[0].mugshot}
           scale={[2, 4]}
@@ -62,10 +53,10 @@ const NoiseProp1 = () => {
         >
           {characters[0].state}
         </Text>
-        <NoiseProp1Effect />
+        <NoiseProp2Effect />
       </Suspense>
     </>
   );
 };
 
-export default NoiseProp1;
+export default NoiseProp2;

@@ -16,6 +16,7 @@ import GltfModel from "./GltfModel";
 import Fade from "react-reveal/Fade";
 import Btext from "../Btext";
 import NoiseProp1 from "./NoiseProp1";
+import NoiseProp2 from "./NoiseProp2";
 
 // const Port = () => {
 //   const { viewport } = useThree();
@@ -59,12 +60,7 @@ const Scene = () => {
       <Suspense fallback={null}>
         <div className="citymodel">
           <Canvas>
-            <ScrollControls
-              pages={1.5}
-              damping={0.85}
-              distance={0.5}
-              style={{ display: "none" }}
-            >
+            <ScrollControls pages={1.5} damping={0.85} distance={0.5}>
               <Scroll>
                 <PerspectiveCamera makeDefault position={[5, 5, -12]} />
                 {/* <Gltf src="/nightcity/scene.gltf" /> */}
@@ -93,6 +89,11 @@ const Scene = () => {
         <div className="david">
           <Canvas>
             <NoiseProp1 />
+          </Canvas>
+        </div>
+        <div className="lucy">
+          <Canvas>
+            <NoiseProp2 />
           </Canvas>
         </div>
       </Suspense>
