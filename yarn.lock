@@ -1613,6 +1613,26 @@
     "@react-spring/shared" "~9.6.1"
     "@react-spring/types" "~9.6.1"
 
+"@react-spring/konva@~9.6.1":
+  version "9.6.1"
+  resolved "https://registry.yarnpkg.com/@react-spring/konva/-/konva-9.6.1.tgz#66e63da0e9681e42395e995402a7e73ba6892461"
+  integrity sha512-MevnU+tnG1LPsmMRpfJfevfLtI0ObIvrwYc+Xg+kmYJe00vwMRSdulQOztKANKalFXBewwk72XrQCeRLXFaUIg==
+  dependencies:
+    "@react-spring/animated" "~9.6.1"
+    "@react-spring/core" "~9.6.1"
+    "@react-spring/shared" "~9.6.1"
+    "@react-spring/types" "~9.6.1"
+
+"@react-spring/native@~9.6.1":
+  version "9.6.1"
+  resolved "https://registry.yarnpkg.com/@react-spring/native/-/native-9.6.1.tgz#b66e237f2faaa4f88569d5a03b6fb0136bcdf2b9"
+  integrity sha512-ZIfSytxFGLw4gYOb8gsmwG0+JZYxuM/Y1XPCXCkhuoMn+RmOYrr0kQ4gLczbmf+TRxth7OT1c8vBYz0+SCGcIQ==
+  dependencies:
+    "@react-spring/animated" "~9.6.1"
+    "@react-spring/core" "~9.6.1"
+    "@react-spring/shared" "~9.6.1"
+    "@react-spring/types" "~9.6.1"
+
 "@react-spring/rafz@~9.6.1":
   version "9.6.1"
   resolved "https://registry.yarnpkg.com/@react-spring/rafz/-/rafz-9.6.1.tgz#d71aafb92b78b24e4ff84639f52745afc285c38d"
@@ -1626,7 +1646,7 @@
     "@react-spring/rafz" "~9.6.1"
     "@react-spring/types" "~9.6.1"
 
-"@react-spring/three@^9.3.1":
+"@react-spring/three@^9.3.1", "@react-spring/three@~9.6.1":
   version "9.6.1"
   resolved "https://registry.yarnpkg.com/@react-spring/three/-/three-9.6.1.tgz#095fcd1dc6509127c33c14486d88289b89baeb9d"
   integrity sha512-Tyw2YhZPKJAX3t2FcqvpLRb71CyTe1GvT3V+i+xJzfALgpk10uPGdGaQQ5Xrzmok1340DAeg2pR/MCfaW7b8AA==
@@ -1640,6 +1660,26 @@
   version "9.6.1"
   resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.6.1.tgz#913d3a68c5cbc1124fdb18eff919432f7b6abdde"
   integrity sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==
+
+"@react-spring/web@~9.6.1":
+  version "9.6.1"
+  resolved "https://registry.yarnpkg.com/@react-spring/web/-/web-9.6.1.tgz#3e4c03b724d2b545dc2fa2649eb6109318ab9178"
+  integrity sha512-X2zR6q2Z+FjsWfGAmAXlQaoUHbPmfuCaXpuM6TcwXPpLE1ZD4A1eys/wpXboFQmDkjnrlTmKvpVna1MjWpZ5Hw==
+  dependencies:
+    "@react-spring/animated" "~9.6.1"
+    "@react-spring/core" "~9.6.1"
+    "@react-spring/shared" "~9.6.1"
+    "@react-spring/types" "~9.6.1"
+
+"@react-spring/zdog@~9.6.1":
+  version "9.6.1"
+  resolved "https://registry.yarnpkg.com/@react-spring/zdog/-/zdog-9.6.1.tgz#5292c374e23e3846db3eb9d7557ed5a7bb40dada"
+  integrity sha512-0jSGm2OFW/+/+4dkRp46KzEkcLVfzV2k6DO1om0dLDtQ4q6FpX4dmDTlRc7Apzin6VtfQONMFIGITtbqoS28MQ==
+  dependencies:
+    "@react-spring/animated" "~9.6.1"
+    "@react-spring/core" "~9.6.1"
+    "@react-spring/shared" "~9.6.1"
+    "@react-spring/types" "~9.6.1"
 
 "@react-three/drei@^9.54.2":
   version "9.54.2"
@@ -4907,6 +4947,11 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
+gsap@^3.11.4:
+  version "3.11.4"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.4.tgz#e6d972d3509a7431b86d81d6fc3bbeb6862e5ff1"
+  integrity sha512-McHhEguHyExMMnjqKA8G+7TvxmlKQGMbjgwAilnFe1e4id7V/tFveRQ2YMZhTYu0oxHGWvbPltdVYQOu3z1SCA==
+
 gzip-size@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-6.0.0.tgz#065367fd50c239c0671cbcbad5be3e2eeb10e462"
@@ -7585,7 +7630,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.0, prop-types@^15.8.1:
+prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -7763,6 +7808,13 @@ react-refresh@^0.11.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
+react-reveal@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-reveal/-/react-reveal-1.2.2.tgz#f47fbc44debc4c185ae2163a215a9e822c7adfef"
+  integrity sha512-JCv3fAoU6Z+Lcd8U48bwzm4pMZ79qsedSXYwpwt6lJNtj/v5nKJYZZbw3yhaQPPgYePo3Y0NOCoYOq/jcsisuw==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-router-dom@^6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.7.0.tgz#0249f4ca4eb704562b8b0ff29caeb928c3a6ed38"
@@ -7832,6 +7884,25 @@ react-scripts@^5.0.1:
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
     fsevents "^2.3.2"
+
+react-spring@^9.4.5:
+  version "9.6.1"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-9.6.1.tgz#e715b2fa523c1a3acfdcf1aaa93e081620b8cc8e"
+  integrity sha512-BeP80R4SLb1bZHW/Q62nECoScHw/fH+jzGkD7dc892HNGa+lbGIJXURc6U7N8JfZ8peEO46nPxR57aUMuYzquQ==
+  dependencies:
+    "@react-spring/core" "~9.6.1"
+    "@react-spring/konva" "~9.6.1"
+    "@react-spring/native" "~9.6.1"
+    "@react-spring/three" "~9.6.1"
+    "@react-spring/web" "~9.6.1"
+    "@react-spring/zdog" "~9.6.1"
+
+react-text-transition@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-text-transition/-/react-text-transition-3.0.2.tgz#b817990a811f0036e608778b4365599836ce7343"
+  integrity sha512-FH7mgn/iMbN/ZyTuw/tA4h2XFPVZ2m+4t86C8tEeK/rEpUBjWw1MmdY+WPvofLiA4ZwPRBFLNsv6Q5K127Xb7w==
+  dependencies:
+    react-spring "^9.4.5"
 
 react-use-measure@^2.1.1:
   version "2.1.1"

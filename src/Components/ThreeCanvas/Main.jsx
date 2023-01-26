@@ -10,6 +10,9 @@ import {
 } from "@react-three/drei";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import GltfModel from "./GltfModel";
+import Fade from "react-reveal/Fade";
+import Btext from "../Btext";
 
 // const Port = () => {
 //   const { viewport } = useThree();
@@ -27,7 +30,6 @@ function Rig() {
   const vec = new THREE.Vector3();
 
   return useFrame(() => {
-    // camera.position.lerp(vec.set(mouse.x, mouse.y, camera.position.z), 0.05);
     camera.lookAt(-1, 3, 5);
   });
 }
@@ -49,25 +51,6 @@ function Lights() {
 }
 
 const Scene = () => {
-  const gltf = useLoader(GLTFLoader, "/nightcity/scene.gltf");
-  useEffect(() => {
-    gltf.scene.traverse((obj) => {
-      if (obj.isMesh) {
-        // obj.material.wireframe = true;
-        // obj.material.color.set(0xff0000);
-      }
-    });
-  }, [gltf]);
-  console.log(gltf);
-
-  const frameGltf = (gltf) => {
-    gltf.scene.traverse((obj) => {
-      if (obj.isMesh) {
-        obj.material.wireframe = true;
-        obj.material.color.set(0xff0000);
-      }
-    });
-  };
   return (
     <>
       <Suspense fallback={null}>
@@ -75,7 +58,7 @@ const Scene = () => {
           <Canvas>
             <PerspectiveCamera makeDefault position={[5, 5, -11]} />
             {/* <Gltf src="/nightcity/scene.gltf" /> */}
-            <primitive object={gltf.scene} />
+            <GltfModel />
             <OrbitControls
               enableZoom={false}
               enablePan={false}
@@ -88,7 +71,12 @@ const Scene = () => {
           </Canvas>
         </div>
         <div className="intro_city_top_div">
-          <div className="main_intro">Night City</div>
+          <Fade bottom>
+            <div className="main_intro">Night City</div>
+          </Fade>
+          <div className="intro_city_bottom_div">
+            <Btext />
+          </div>
         </div>
       </Suspense>
     </>
