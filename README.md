@@ -1,3 +1,7 @@
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/89598307/214995422-25dc64a7-27db-41fa-a002-20764c202847.gif)
+
+
+
 # PROJECT-REBECCA
 * https://web-project-rebecca-1jx7m2glddtwie5.gksl2.cloudtype.app/
 * `React` 및 `Three.js`로 사이버펑크 엣지러너 스타일의 사이트를 만들었습니다.
