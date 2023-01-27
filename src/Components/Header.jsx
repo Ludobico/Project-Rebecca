@@ -15,18 +15,21 @@ const Header = () => {
   return (
     <div className="header_top_div">
       <div className="div_img">
-        <img src={logo} className="logo_img" />
+        <img src={logo} className="logo_img" onClick={toTop} />
       </div>
       <header>
         <div className="nav">
           <ul className="nav_list">
             <li>
-              <a href="#">
+              <a>
                 <span onClick={toTop}>Top</span>
               </a>
             </li>
             <li>
-              <a href="https://github.com/Ludobico" target="_blank">
+              <a
+                href="https://github.com/Ludobico/Project_Rebecca"
+                target="_blank"
+              >
                 <span>Github</span>
               </a>
             </li>
@@ -36,7 +39,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a>
                 <span onClick={toContact}>Contact</span>
               </a>
             </li>
