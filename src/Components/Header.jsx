@@ -21,7 +21,7 @@ const Header = () => {
         <div className="nav">
           <ul className="nav_list">
             <li>
-              <a>
+              <a href="#">
                 <span onClick={toTop}>Top</span>
               </a>
             </li>
