@@ -27,13 +27,15 @@ div {
 }
 
 .david {
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
+  margin: auto;
 }
 
 .lucy {
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
+  margin: auto;
 }
 
 .rebecca {

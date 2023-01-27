@@ -11,7 +11,6 @@ import Header from "../Header";
 import "./Contact.css";
 import * as THREE from "three";
 import Fade from "react-reveal/Fade";
-import { MeshStandardMaterial, TextureLoader } from "three";
 
 // const CopsLoader = () => {
 //   let mixer = null;
@@ -71,7 +70,7 @@ const Scene = () => {
 
   return (
     <Canvas>
-      <PerspectiveCamera makeDefault position={[0, 0, 5]} castShadow />
+      <PerspectiveCamera makeDefault position={[0, 0, 5]} />
       <directionalLight intensity={1.2} color={0xffffff} castShadow />
       {/* <spotLight intensity={0.7} color={0xff0000} position={[0, 3, 2]} /> */}
       <LightAnimation />
