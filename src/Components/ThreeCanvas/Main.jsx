@@ -36,7 +36,7 @@ const Scene = () => {
     <>
       <Suspense fallback={<Loader />}>
         <div className="citymodel">
-          <Canvas>
+          <Canvas frameloop="demand">
             {/* <ScrollControls pages={1.5} damping={0.85} distance={0.5}> */}
             {/* <Scroll> */}
             <PerspectiveCamera makeDefault position={[5, 5, -12]} />
@@ -50,7 +50,7 @@ const Scene = () => {
             <Rig />
             {/* </Scroll> */}
             {/* </ScrollControls> */}
-            <Perf />
+            {/* <Perf /> */}
           </Canvas>
         </div>
         <div className="intro_city_top_div">

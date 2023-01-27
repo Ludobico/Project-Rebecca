@@ -46,23 +46,21 @@ const Scene = () => {
 
 const Contact = () => {
   return (
-    <div>
+    <div className="contact_top_div">
       <Header />
       <div className="cops_model">
         <Scene />
       </div>
       <div className="contact_info">
         <Fade right delay={1200}>
-          <div className="contact_top">Welcome</div>
+          <div className="contact_top">CONTACT ME</div>
         </Fade>
         <Fade right delay={2000}>
-          <div className="contact_bottom">
-            Please contact me through the information below
-          </div>
+          <div className="contact_bottom">Check the information below</div>
         </Fade>
         <Fade right delay={2300}>
           <div className="contact_bottom">
-            <a href="https://github.com/Ludobico">
+            <a href="https://github.com/Ludobico" target="_blank">
               https://github.com/Ludobico
             </a>
           </div>

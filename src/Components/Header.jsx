@@ -21,23 +21,18 @@ const Header = () => {
         <div className="nav">
           <ul className="nav_list">
             <li>
-              <a href="#">
+              <a>
                 <span onClick={toTop}>Top</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://github.com/Ludobico" target="_blank">
                 <span>Github</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://threejs.org/manual/" target="_blank">
                 <span>ThreeJS</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>Project</span>
               </a>
             </li>
             <li>
