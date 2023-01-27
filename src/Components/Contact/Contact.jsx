@@ -11,22 +11,41 @@ import Header from "../Header";
 import "./Contact.css";
 import * as THREE from "three";
 import Fade from "react-reveal/Fade";
+import { MeshStandardMaterial, TextureLoader } from "three";
+
+// const CopsLoader = () => {
+//   let mixer = null;
+//   const { scene, animations } = useLoader(GLTFLoader, "sphere_bot.glb");
+//   //   mixer = new THREE.AnimationMixer(scene);
+//   mixer = new THREE.AnimationMixer(scene);
+//   useEffect(() => {
+//     void mixer.clipAction(animations[4]).reset().startAt(2).play();
+//   }, [mixer]);
+//   console.log(mixer);
+//   useFrame((state, delta) => {
+//     mixer.update(delta);
+//     // console.log(ca);
+//   });
+//   return <primitive object={scene} position={[-2.4, -1, 0]} scale={1.5} />;
+// };
 
 const CopsLoader = () => {
   let mixer = null;
-  const { scene, animations } = useLoader(GLTFLoader, "sphere_bot.glb");
+  let action = null;
+  const { scene, animations } = useLoader(GLTFLoader, "buster_drone.glb");
   //   mixer = new THREE.AnimationMixer(scene);
   mixer = new THREE.AnimationMixer(scene);
   useEffect(() => {
-    void mixer.clipAction(animations[4]).reset().fadeIn(6).play();
-    return () => void mixer.clipAction(animations[4]).fadeOut(3);
-  }, [mixer]);
-  //   void mixer.clipAction(animations[4]).reset().fadeIn(6).play();
+    action = mixer.clipAction(animations[0]);
+    action.loop = THREE.LoopPingPong;
+    action.play();
+  }, [action]);
+  console.log(mixer);
   useFrame((state, delta) => {
     mixer.update(delta);
     // console.log(ca);
   });
-  return <primitive object={scene} position={[-2.4, -1, 0]} scale={1.5} />;
+  return <primitive object={scene} position={[-2.4, 0.3, 0]} scale={1} />;
 };
 
 const LightAnimation = () => {
@@ -58,7 +77,7 @@ const Scene = () => {
       <LightAnimation />
       {/* <primitive object={scene} scale={0.5} position={[-0.7, -1, 0]} /> */}
       <CopsLoader />
-      {/* <OrbitControls /> */}
+      <OrbitControls autoRotate autoRotateSpeed={0.3} />
     </Canvas>
   );
 };
