@@ -29,6 +29,24 @@ const CopsLoader = () => {
   return <primitive object={scene} position={[-2.4, -1, 0]} scale={1.5} />;
 };
 
+const LightAnimation = () => {
+  const lightRef = useRef();
+  const clock = new THREE.Clock();
+  useFrame(({ clcok }) => {
+    lightRef.current.position.x = Math.sin(clock.getElapsedTime() / 2) * 4;
+    lightRef.current.position.z = Math.cos(clock.getElapsedTime() / 5) * 2;
+  });
+  return (
+    <pointLight
+      ref={lightRef}
+      intensity={1.3}
+      color={0x8b0000}
+      position={[0, -4, -3]}
+      castShadow
+    />
+  );
+};
+
 const Scene = () => {
   //   const gltf = useLoader(GLTFLoader, "attack_helicopter/scene.gltf");
 
@@ -36,7 +54,8 @@ const Scene = () => {
     <Canvas>
       <PerspectiveCamera makeDefault position={[0, 0, 5]} castShadow />
       <directionalLight intensity={1.2} color={0xffffff} castShadow />
-      <spotLight intensity={0.7} color={0xff0000} position={[0, 3, 2]} />
+      {/* <spotLight intensity={0.7} color={0xff0000} position={[0, 3, 2]} /> */}
+      <LightAnimation />
       {/* <primitive object={scene} scale={0.5} position={[-0.7, -1, 0]} /> */}
       <CopsLoader />
       {/* <OrbitControls /> */}
