@@ -1,10 +1,11 @@
+import { Html, Loader, useProgress } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import {
   BrightnessContrast,
   EffectComposer,
   SMAA,
 } from "@react-three/postprocessing";
-import React from "react";
+import React, { Suspense } from "react";
 import { GLTFLoader } from "three-stdlib";
 
 const GltfModel = () => {
@@ -17,11 +18,13 @@ const GltfModel = () => {
   console.log(gltf);
   return (
     <>
-      <primitive object={gltf.scene} scale={1.2} />;
-      <EffectComposer multisampling={0}>
-        <BrightnessContrast brightness={0.1} contrast={0.5} />
-        <SMAA />
-      </EffectComposer>
+      <Suspense fallback={<Loader />}>
+        <primitive object={gltf.scene} scale={1.2} />;
+        <EffectComposer multisampling={0}>
+          <BrightnessContrast brightness={0.1} contrast={0.5} />
+          <SMAA />
+        </EffectComposer>
+      </Suspense>
     </>
   );
 };
