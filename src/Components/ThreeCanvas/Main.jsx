@@ -30,8 +30,6 @@ const Scene = () => {
       <Suspense fallback={<Loader />}>
         <div className="citymodel">
           <Canvas frameloop="demand">
-            {/* <ScrollControls pages={1.5} damping={0.85} distance={0.5}> */}
-            {/* <Scroll> */}
             <PerspectiveCamera makeDefault position={[5, 5, -12]} />
             <GltfModel />
             <OrbitControls
@@ -41,8 +39,6 @@ const Scene = () => {
               autoRotate
             />
             <Rig />
-            {/* </Scroll> */}
-            {/* </ScrollControls> */}
             {/* <Perf /> */}
           </Canvas>
         </div>
@@ -70,6 +66,7 @@ const Scene = () => {
           </Canvas>
         </div>
       </Suspense>
+      <Loader />
     </>
   );
 };
