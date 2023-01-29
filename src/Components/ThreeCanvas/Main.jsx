@@ -27,47 +27,49 @@ function Rig() {
 const Scene = () => {
   return (
     <>
-      <div className="citymodel">
-        <Canvas frameloop="demand">
-          {/* <ScrollControls pages={1.5} damping={0.85} distance={0.5}> */}
-          {/* <Scroll> */}
-          <PerspectiveCamera makeDefault position={[5, 5, -12]} />
-          <GltfModel />
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            enableRotate={false}
-            autoRotate
-          />
-          <Rig />
-          {/* </Scroll> */}
-          {/* </ScrollControls> */}
-          {/* <Perf /> */}
-        </Canvas>
-      </div>
-      <div className="intro_city_top_div">
-        <Fade bottom>
-          <div className="main_intro">Night City</div>
-        </Fade>
-        <div className="intro_city_bottom_div">
-          <Btext />
+      <Suspense fallback={<Loader />}>
+        <div className="citymodel">
+          <Canvas frameloop="demand">
+            {/* <ScrollControls pages={1.5} damping={0.85} distance={0.5}> */}
+            {/* <Scroll> */}
+            <PerspectiveCamera makeDefault position={[5, 5, -12]} />
+            <GltfModel />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              enableRotate={false}
+              autoRotate
+            />
+            <Rig />
+            {/* </Scroll> */}
+            {/* </ScrollControls> */}
+            {/* <Perf /> */}
+          </Canvas>
         </div>
-      </div>
-      <div className="david">
-        <Canvas>
-          <NoiseProp1 />
-        </Canvas>
-      </div>
-      <div className="lucy">
-        <Canvas>
-          <NoiseProp2 />
-        </Canvas>
-      </div>
-      <div className="rebecca">
-        <Canvas>
-          <NoiseProp3 />
-        </Canvas>
-      </div>
+        <div className="intro_city_top_div">
+          <Fade bottom>
+            <div className="main_intro">Night City</div>
+          </Fade>
+          <div className="intro_city_bottom_div">
+            <Btext />
+          </div>
+        </div>
+        <div className="david">
+          <Canvas>
+            <NoiseProp1 />
+          </Canvas>
+        </div>
+        <div className="lucy">
+          <Canvas>
+            <NoiseProp2 />
+          </Canvas>
+        </div>
+        <div className="rebecca">
+          <Canvas>
+            <NoiseProp3 />
+          </Canvas>
+        </div>
+      </Suspense>
     </>
   );
 };
