@@ -39,7 +39,6 @@ const NoiseProp1Effect = () => {
         eskil={false}
         blendFunction={BlendFunction.NORMAL}
       />
-      <SMAA />
     </EffectComposer>
   );
 };
