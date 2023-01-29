@@ -4,11 +4,8 @@ import {
   EffectComposer,
   SMAA,
 } from "@react-three/postprocessing";
-import { useControls } from "leva";
-import { BlendFunction } from "postprocessing";
-import React, { Suspense, useEffect } from "react";
+import React from "react";
 import { GLTFLoader } from "three-stdlib";
-import LoaderPro from "./LoaderPro";
 
 const GltfModel = () => {
   const gltf = useLoader(GLTFLoader, "/nc_optim/scene.gltf");

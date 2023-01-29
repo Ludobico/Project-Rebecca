@@ -1,28 +1,14 @@
-import React, { Suspense, useEffect, useMemo, useRef } from "react";
-import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import React, { Suspense } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import "./Main.css";
 import Header from "../Header";
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  Gltf,
-  useHelper,
-  ScrollControls,
-  Scroll,
-  Loader,
-  useProgress,
-  Html,
-} from "@react-three/drei";
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls, PerspectiveCamera, Loader } from "@react-three/drei";
 import GltfModel from "./GltfModel";
 import Fade from "react-reveal/Fade";
 import Btext from "../Btext";
 import NoiseProp1 from "./NoiseProp1";
 import NoiseProp2 from "./NoiseProp2";
 import NoiseProp3 from "./NoiseProp3";
-import { Perf } from "r3f-perf";
-import LoaderPro from "./LoaderPro";
 
 function Rig() {
   const { camera, mouse } = useThree();
@@ -34,7 +20,7 @@ function Rig() {
 const Scene = () => {
   return (
     <>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={null}>
         <div className="citymodel">
           <Canvas frameloop="demand">
             {/* <ScrollControls pages={1.5} damping={0.85} distance={0.5}> */}
