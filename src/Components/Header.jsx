@@ -29,16 +29,16 @@ const Header = () => {
               </a>
             </li>
             <li>
+              <a>
+                <span onClick={toInfo}>Cities</span>
+              </a>
+            </li>
+            <li>
               <a
                 href="https://github.com/Ludobico/Project_Rebecca"
                 target="_blank"
               >
                 <span>Github</span>
-              </a>
-            </li>
-            <li>
-              <a>
-                <span onClick={toInfo}>Information</span>
               </a>
             </li>
             <li>
