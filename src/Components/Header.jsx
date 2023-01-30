@@ -12,6 +12,9 @@ const Header = () => {
   const toContact = () => {
     navigator("/contact");
   };
+  const toInfo = () => {
+    navigator("/info");
+  };
   return (
     <div className="header_top_div">
       <div className="div_img">
@@ -34,8 +37,8 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="https://threejs.org/manual/" target="_blank">
-                <span>ThreeJS</span>
+              <a>
+                <span onClick={toInfo}>Information</span>
               </a>
             </li>
             <li>

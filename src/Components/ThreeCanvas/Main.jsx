@@ -66,7 +66,7 @@ const Scene = () => {
           </Canvas>
         </div>
       </Suspense>
-      <Loader />
+      {/* <Loader /> */}
     </>
   );
 };
