@@ -178,7 +178,7 @@ const Info = () => {
             <div className="info_item-image con4"></div>
             <div className="info_footer">
               <div className="info_footer_quote">
-                루시가 거주한 아파트와 데이비드와 동거한 펜트하우스
+                루시가 데이비드와 동거한 펜트하우스
               </div>
             </div>
           </div>
