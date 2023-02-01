@@ -5,7 +5,7 @@
 # PROJECT-REBECCA
 * [demo](https://web-project-rebecca-1jx7m2glddtwie5.gksl2.cloudtype.app/)
 * `React` 및 `Three.js`로 사이버펑크 엣지러너 스타일의 사이트를 만들었습니다.
-* 접속이 되지않는다면 **chrome 업데이트** , 혹은 **그래픽카드 업데이트**를 해주세요
+* 접속이 되지않는다면 **chrome 업데이트** , 혹은 **그래픽카드 업그레이드**를 해주세요
 
 ## Libraries
 사용한 라이브러리는 아래와 같습니다.
