@@ -14,7 +14,6 @@ const GltfModel = () => {
   gltf.materials.Dtla_Orbit_u2_v1.wireframe = true;
   gltf.materials.Dtla_Orbit_u2_v2.wireframe = true;
   gltf.materials.Dtla_Orbit_u3_v1.wireframe = true;
-  console.log(gltf);
   return (
     <>
       <primitive object={gltf.scene} scale={1.2} />;

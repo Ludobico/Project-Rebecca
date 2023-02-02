@@ -9,12 +9,9 @@ import {
   useProgress,
   Html,
 } from "@react-three/drei";
-import GltfModel from "./GltfModel";
 import Fade from "react-reveal/Fade";
 import Btext from "../Btext";
-import NoiseProp1 from "./NoiseProp1";
-import NoiseProp2 from "./NoiseProp2";
-import NoiseProp3 from "./NoiseProp3";
+import { Perf } from "r3f-perf";
 
 function Rig() {
   const { camera, mouse } = useThree();
@@ -24,6 +21,11 @@ function Rig() {
   });
 }
 
+const GltfModelLazy = React.lazy(() => import("./GltfModel"));
+const Prop1Lazy = React.lazy(() => import("./NoiseProp1"));
+const Prop2Lazy = React.lazy(() => import("./NoiseProp2"));
+const Prop3Lazy = React.lazy(() => import("./NoiseProp3"));
+
 const Scene = () => {
   return (
     <>
@@ -31,7 +33,7 @@ const Scene = () => {
         <div className="citymodel">
           <Canvas frameloop="demand">
             <PerspectiveCamera makeDefault position={[5, 5, -12]} />
-            <GltfModel />
+            <GltfModelLazy />
             <OrbitControls
               enableZoom={false}
               enablePan={false}
@@ -39,7 +41,7 @@ const Scene = () => {
               autoRotate
             />
             <Rig />
-            {/* <Perf /> */}
+            {/* <Perf antialias={true} /> */}
           </Canvas>
         </div>
         <div className="intro_city_top_div">
@@ -52,17 +54,17 @@ const Scene = () => {
         </div>
         <div className="david">
           <Canvas>
-            <NoiseProp1 />
+            <Prop1Lazy />
           </Canvas>
         </div>
         <div className="lucy">
           <Canvas>
-            <NoiseProp2 />
+            <Prop2Lazy />
           </Canvas>
         </div>
         <div className="rebecca">
           <Canvas>
-            <NoiseProp3 />
+            <Prop3Lazy />
           </Canvas>
         </div>
       </Suspense>
