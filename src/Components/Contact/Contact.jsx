@@ -90,7 +90,7 @@ const Contact = () => {
       </div>
       <div className="contact_info">
         <Fade right delay={1200}>
-          <div className="contact_top">CONTACT ME</div>
+          <div className="contact_top">CONTACT</div>
         </Fade>
         <Fade right delay={2000}>
           <div className="contact_bottom">Check the information below</div>

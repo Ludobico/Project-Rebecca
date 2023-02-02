@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import "./Main.css";
 import Header from "../Header";
@@ -8,6 +8,7 @@ import {
   Loader,
   useProgress,
   Html,
+  PerformanceMonitor,
 } from "@react-three/drei";
 import Fade from "react-reveal/Fade";
 import Btext from "../Btext";
