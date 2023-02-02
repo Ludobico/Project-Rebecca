@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Main from "./Components/ThreeCanvas/Main";
 import Contact from "./Components/Contact/Contact";
 import Info from "./Components/Info/Info";
+import ParticleImage from "./Components/ThreeCanvas/ParticleImage";
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/info" element={<Info />} />
+        <Route path="/part" element={<ParticleImage />} />
       </Routes>
     </div>
   );
