@@ -5,7 +5,7 @@
 # PROJECT-REBECCA
 * [demo](https://web-project-rebecca-1jx7m2glddtwie5.gksl2.cloudtype.app/)
 * `React` 및 `Three.js`로 사이버펑크 엣지러너 스타일의 사이트를 만들었습니다.
-* 접속이 되지않는다면 **chrome 업데이트** , 혹은 **그래픽카드 업데이트**를 해주세요
+* 접속이 되지않는다면 **chrome 업데이트** , 혹은 **그래픽카드 업그레이드**를 해주세요
 
 ## Libraries
 사용한 라이브러리는 아래와 같습니다.
@@ -43,6 +43,8 @@ npm start
 ```
 
 ## PostProcessing
+화면 후처리 효과에 대한 설명으로는 [공식 사이트 설명](https://pmndrs.github.io/postprocessing/public/docs/) 이나 [Project_Rebecca_PostProcessing](https://github.com/Ludobico/Project_Rebecca/issues/2) 를 참고해주세요.
+
 ![새로운 프로젝트](https://user-images.githubusercontent.com/89598307/215418901-2432aa0f-c2ca-404f-bf45-9797640e964b.gif)
 ![새로운 프로젝트](https://user-images.githubusercontent.com/89598307/215419410-eff233fc-c987-40b0-8c5c-1fac940f7d28.gif)
 ![새로운 프로젝트11111](https://user-images.githubusercontent.com/89598307/215420360-9116394c-0b4a-45a2-a0d6-7c1e3ea51cf0.gif)
