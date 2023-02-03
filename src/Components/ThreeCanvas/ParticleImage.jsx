@@ -1,5 +1,5 @@
-import { Canvas } from "@react-three/fiber";
-import React, { useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import React, { useRef, useState } from "react";
 import "./ParticleImage.css";
 import * as THREE from "three";
 import { OrbitControls } from "@react-three/drei";
@@ -43,33 +43,46 @@ void main(){
 
 `;
 
-const ParticleImage = () => {
-  return (
-    <Canvas>
-      <Scene />
-    </Canvas>
-  );
+const scatterImage = (image, size, intensity) => {
+  const uniforms = {
+    texture: { value: new THREE.TextureLoader().load(image) },
+    time: { value: 0.0 },
+    intensity: { value: intensity },
+  };
+
+  const material = new THREE.ShaderMaterial({
+    uniforms: uniforms,
+    fragmentShader: `
+    uniform sampler2D texture;
+    uniform float time;
+    uniform float intensity;
+
+    varying vec2 vUv;
+
+    void main(){
+    vec2 uv=vUv;
+    uv.x+=(sin(uv.y*10.+time*2.)*.5+sin(uv.x*10.+time*3.))*intensity;
+    uv.y+=(sin(uv.x*10.+time*2.)*.5+sin(uv.y*10.+time*3.))*intensity;
+    gl_FragColor=texture2D(texture,uv);
+  }`,
+    transparent: true,
+  });
+  return { material, size };
 };
 
-const Scene = () => {
-  const mesh = useRef();
-  let number = 512 * 512;
+const ParticleImage = ({ image, size, intensity }) => {
+  const meshRef = useRef(null);
+  const [time, setTime] = useState(0);
+
+  useFrame(({ clock }) => {
+    meshRef.current.material.uniforms.time.value = time + clock.getDelta();
+  });
 
   return (
-    <points ref={mesh}>
-      <planeBufferGeometry args={[2, 2, 10, 10]} />
-      <meshNormalMaterial />
-      <shaderMaterial
-        fragmentShader={fragment}
-        vertexShader={vertex}
-        uniforms={{
-          progress: { type: "f", value: 0 },
-          t1: { type: "t", value: Texture[0] },
-        }}
-        side={THREE.DoubleSide}
-      />
-      <OrbitControls autoRotate />
-    </points>
+    <mesh ref={meshRef}>
+      <planeBufferGeometry attach="geometry" args={[10, 10]} />
+      {scatterImage(image, size, intensity).material}
+    </mesh>
   );
 };
 
