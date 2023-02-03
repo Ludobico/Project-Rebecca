@@ -1,40 +1,47 @@
 import { Canvas } from "@react-three/fiber";
 import React, { useRef } from "react";
 import "./ParticleImage.css";
+import * as THREE from "three";
+import { OrbitControls } from "@react-three/drei";
+import t1 from "../../Static/Img/example.jpg";
+import { Texture } from "@react-three/postprocessing";
 
-import fragment from "../Shader/particleFra.glsl";
-import vertex from "../Shader/particleVe.glsl";
+// import fragment from "../Shader/Fragment.glsl";
+// import vertex from "../Shader/Vertex.glsl";
 
-// const vertex = `
-// varying vec2 vUv;
+const vertex = `
+varying vec2 vUv;
+varying vec3 aCoordinates;
+varying vec2 vCoordinates;
+uniform sampler2D t1;
+uniform sampler2D t2;
 
-// void main() {
-//   vUv = uv;
-//   vec4 modelPosition = modelMatrix * vec4(position, 1.0);
-//   vec4 viewPosition = viewMatrix * modelPosition;
-//   vec4 projectedPosition = projectionMatrix * viewPosition;
+void main() {
+  vUv = uv;
 
-//   gl_Position = projectedPosition;
-// }
+  vec4 mvPosition = modelViewMatrix * vec4( position, 1.);
 
-// `;
+  gl_PointSize = 50. * (1. / - mvPosition.z);
+  gl_Position = projectionMatrix * mvPosition;
 
-// const fragment = `
-// varying vec2 vUv;
+  vCoordinates = aCoordinates.xy;
+}
 
-// vec3 colorA = vec3(0.912,0.191,0.652);
-// vec3 colorB = vec3(1.000,0.777,0.052);
+`;
 
-// void main() {
-//   // "Normalizing" with an arbitrary value
-//   // We'll see a cleaner technique later :)
-//   vec2 normalizedPixel = gl_FragCoord.xy/600.0;
-//   vec3 color = mix(colorA, colorB, normalizedPixel.x);
+const fragment = `
+varying vec2 vUv;
+varying vec2 vCoordinates;
+uniform sampler2D t1;
+uniform sampler2D t2;
 
-//   gl_FragColor = vec4(color,1.0);
-// }
+void main(){
+  vec2 myUV = vec2(vCoordinates.x/512. , vCoordinates.y/512.);
+  vec4 iamge = texture2D(t1, myUV)
+  gl_FragColor = image
+}
 
-// `;
+`;
 
 const ParticleImage = () => {
   return (
@@ -46,13 +53,23 @@ const ParticleImage = () => {
 
 const Scene = () => {
   const mesh = useRef();
+  let number = 512 * 512;
 
   return (
-    <mesh ref={mesh}>
-      <boxGeometry args={[1, 1, 1]} />
-      {/* <meshNormalMaterial /> */}
-      <shaderMaterial fragmentShader={fragment} vertexShader={vertex} />
-    </mesh>
+    <points ref={mesh}>
+      <planeBufferGeometry args={[2, 2, 10, 10]} />
+      <meshNormalMaterial />
+      <shaderMaterial
+        fragmentShader={fragment}
+        vertexShader={vertex}
+        uniforms={{
+          progress: { type: "f", value: 0 },
+          t1: { type: "t", value: Texture[0] },
+        }}
+        side={THREE.DoubleSide}
+      />
+      <OrbitControls autoRotate />
+    </points>
   );
 };
 
