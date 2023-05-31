@@ -34,10 +34,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a
-                href="https://github.com/Ludobico/Project_Rebecca"
-                target="_blank"
-              >
+              <a href="https://github.com/Ludobico/Project_Rebecca" target="_blank">
                 <span>Github</span>
               </a>
             </li>
